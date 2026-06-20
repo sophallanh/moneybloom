@@ -1,52 +1,221 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BloomBot — Trading, Automated. Your Funds, Always Yours.</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MoneyBloom — AI Trading Systems</title>
+  <meta name="description" content="MoneyBloom builds AI-powered trading systems for serious operators. BloomBot analyzes, monitors, and executes within strict rules." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: #e8eefc;
+      --muted: #9fb0d0;
+      --accent: #6ee7ff;
+      --accent2: #8b5cf6;
+      --line: rgba(255,255,255,.12);
+      --good: #4ade80;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(110,231,255,.18), transparent 30%),
+        radial-gradient(circle at 80% 0%, rgba(139,92,246,.18), transparent 25%),
+        var(--bg);
+      color: var(--text);
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 80px; }
+    .nav {
+      display:flex; justify-content:space-between; align-items:center; gap:16px;
+      padding: 10px 0 28px;
+    }
+    .brand { font-weight: 800; letter-spacing: .4px; font-size: 20px; }
+    .brand span { color: var(--accent); }
+    .nav a {
+      color: var(--muted); text-decoration:none; margin-left: 18px; font-size: 14px;
+    }
+    .hero {
+      display:grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: stretch;
+      padding: 34px 0 18px;
+    }
+    .card {
+      background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.28);
+      backdrop-filter: blur(12px);
+    }
+    .hero-main { padding: 40px; }
+    .eyebrow {
+      display:inline-flex; align-items:center; gap:8px;
+      color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing:.16em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 16px 0 14px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 62ch;
+    }
+    .actions { display:flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 14px 20px; border-radius: 999px; text-decoration:none;
+      font-weight: 700; border: 1px solid var(--line);
+    }
+    .btn.primary { background: linear-gradient(90deg, var(--accent2), var(--accent)); color:#06101d; }
+    .btn.secondary { color: var(--text); background: rgba(255,255,255,.04); }
+    .hero-side { padding: 22px; display:flex; flex-direction:column; gap:14px; }
+    .stat {
+      background: var(--panel2); border: 1px solid var(--line); border-radius: 18px; padding: 18px;
+    }
+    .stat .k { font-size: 28px; font-weight: 800; }
+    .stat .l { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    .grid3 {
+      display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px;
+    }
+    .feature { padding: 24px; }
+    .feature h3, .section h2 { margin: 0 0 10px; }
+    .feature p, .section p, li { color: var(--muted); line-height: 1.7; }
+    .section { padding: 34px 0 0; }
+    .section .card { padding: 28px; }
+    ul { padding-left: 18px; margin: 0; }
+    .split {
+      display:grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px;
+    }
+    .pill {
+      display:inline-flex; padding: 8px 12px; border-radius: 999px;
+      background: rgba(74,222,128,.12); color: #bff3cf; border: 1px solid rgba(74,222,128,.22);
+      font-size: 13px; font-weight: 700;
+    }
+    .footer {
+      margin-top: 26px; color: var(--muted); font-size: 13px; text-align:center;
+    }
+    @media (max-width: 920px) {
+      .hero, .grid3, .split { grid-template-columns: 1fr; }
+      .hero-main { padding: 28px; }
+      .nav { flex-direction: column; align-items:flex-start; }
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900">
-<nav class="relative flex flex-wrap items-center justify-between py-4 px-6 border-b border-gray-100">
-  <a href="#" class="flex items-center gap-2 text-lg font-semibold">
-    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-green-100 text-green-700">📈</span>
-    BloomBot
-  </a>
-  <a href="mailto:sophallanh@gmail.com?subject=BloomBot%20-%20I%27m%20interested" class="inline-block px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800">Get started</a>
-</nav>
-<div class="py-16 container mx-auto px-4 text-center">
-  <div class="flex flex-wrap justify-center">
-    <div class="w-full md:w-3/5 px-4">
-      <h1 class="font-bold text-5xl pb-6 leading-tight">Trading, automated.<br>Your funds, always yours.</h1>
-      <h5 class="text-lg font-normal leading-7 text-gray-600 md:mx-10 px-2 mb-8">A custom bot trades your strategy 24/7 on your own exchange account. You watch the results. You stay in control.</h5>
-      <a href="mailto:sophallanh@gmail.com?subject=BloomBot%20-%20I%27m%20interested" class="inline-block text-center select-none border font-medium rounded-lg no-underline bg-green-600 text-white hover:bg-green-700 py-3 px-6 text-lg">Get started</a>
-      <p class="text-sm text-gray-500 mt-4">$250 to start &middot; $250 on launch &middot; $100/mo after</p>
-    </div>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mt-16">
-    <div class="bg-gray-50 rounded-xl p-6"><p class="text-2xl font-bold">24/7</p><p class="text-sm text-gray-500 mt-1">always watching</p></div>
-    <div class="bg-gray-50 rounded-xl p-6"><p class="text-2xl font-bold">0</p><p class="text-sm text-gray-500 mt-1">withdrawal access</p></div>
-    <div class="bg-gray-50 rounded-xl p-6"><p class="text-2xl font-bold">100%</p><p class="text-sm text-gray-500 mt-1">your funds, your account</p></div>
-  </div>
-</div>
-<section class="py-10 bg-gray-50 sm:pt-16 lg:pt-20">
-  <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-5xl">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-xl p-6 border border-gray-100"><p class="text-2xl mb-3">🔒</p><p class="font-semibold mb-2">Your account, your funds</p><p class="text-sm text-gray-600 leading-relaxed">The bot trades inside your own exchange account. Money never passes through us.</p></div>
-      <div class="bg-white rounded-xl p-6 border border-gray-100"><p class="text-2xl mb-3">📊</p><p class="font-semibold mb-2">Backtested first</p><p class="text-sm text-gray-600 leading-relaxed">Every strategy is tested against historical data before going live.</p></div>
-      <div class="bg-white rounded-xl p-6 border border-gray-100"><p class="text-2xl mb-3">🔔</p><p class="font-semibold mb-2">Real-time alerts</p><p class="text-sm text-gray-600 leading-relaxed">Get a Telegram message the moment a trade happens.</p></div>
-    </div>
-    <div class="bg-white rounded-2xl border border-gray-100 p-10 text-center mt-16">
-      <p class="text-xl font-semibold mb-8">Simple, transparent pricing</p>
-      <div class="flex flex-wrap justify-center gap-10 mb-8">
-        <div><p class="text-3xl font-bold text-green-600">$500</p><p class="text-sm text-gray-500 mt-1">one-time setup<br>($250 start / $250 on delivery)</p></div>
-        <div><p class="text-3xl font-bold text-green-600">$100<span class="text-base">/mo</span></p><p class="text-sm text-gray-500 mt-1">hosting, monitoring<br>& ongoing support</p></div>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Money<span>Bloom</span></div>
+      <div>
+        <a href="#how">How it works</a>
+        <a href="#results">Results</a>
+        <a href="#contact">Contact</a>
       </div>
-      <a href="mailto:sophallanh@gmail.com?subject=BloomBot%20-%20I%27m%20interested" class="inline-block px-6 py-3 text-white bg-green-600 rounded-lg hover:bg-green-700 font-medium">Message me to get started</a>
     </div>
+
+    <div class="hero">
+      <div class="card hero-main">
+        <div class="eyebrow">AI ONE-PERSON COMPANY</div>
+        <h1>MoneyBloom builds AI-powered trading systems for serious operators.</h1>
+        <p class="sub">
+          BloomBot is our AI trading operator: it analyzes markets, monitors performance, and executes inside strict rules.
+          Your funds stay in your own exchange account. Freqtrade handles execution. Stripe handles subscriptions.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#contact">Join the waitlist</a>
+          <a class="btn secondary" href="#how">See how it works</a>
+        </div>
+      </div>
+      <div class="card hero-side">
+        <div class="stat">
+          <div class="k">BloomBot</div>
+          <div class="l">The product layer inside MoneyBloom.</div>
+        </div>
+        <div class="stat">
+          <div class="k">1.25%</div>
+          <div class="l">2023 backtest result on BTC/USDT baseline strategy.</div>
+        </div>
+        <div class="stat">
+          <div class="k">2.62%</div>
+          <div class="l">Max drawdown in the same test window.</div>
+        </div>
+        <div class="stat">
+          <div class="k">54.5%</div>
+          <div class="l">Win rate across 11 closed trades.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="card feature">
+        <h3>Execution</h3>
+        <p>Freqtrade runs the bot behind the scenes using authenticated exchange access and trade-only permissions.</p>
+      </div>
+      <div class="card feature">
+        <h3>AI Analysis</h3>
+        <p>The AI reads market state, summarizes conditions, and proposes actions before any allowed execution.</p>
+      </div>
+      <div class="card feature">
+        <h3>Billing</h3>
+        <p>Stripe subscriptions keep onboarding and monthly access simple, clean, and professional.</p>
+      </div>
+    </div>
+
+    <div class="section" id="how">
+      <div class="card">
+        <h2>How it works</h2>
+        <div class="split">
+          <div>
+            <span class="pill">Step 1</span>
+            <h3>Connect</h3>
+            <p>Join the waitlist and connect your exchange account with trade-only permissions.</p>
+          </div>
+          <div>
+            <span class="pill">Step 2</span>
+            <h3>Activate</h3>
+            <p>BloomBot starts reading data, tracking signals, and preparing actions within your rules.</p>
+          </div>
+          <div>
+            <span class="pill">Step 3</span>
+            <h3>Monitor</h3>
+            <p>See status, trades, and logs from a polished dashboard built for trust and visibility.</p>
+          </div>
+          <div>
+            <span class="pill">Step 4</span>
+            <h3>Subscribe</h3>
+            <p>Use Stripe for recurring access and customer management without custom billing complexity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="results">
+      <div class="card">
+        <h2>Baseline results</h2>
+        <p>The current baseline strategy is conservative and intended for capital preservation rather than aggressive upside.</p>
+        <ul>
+          <li>11 trades.</li>
+          <li>1.25% total profit.</li>
+          <li>2.62% max drawdown.</li>
+          <li>54.5% win rate.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="contact">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>BloomBot is being built as the AI company layer inside MoneyBloom. Put your email or waitlist form here next.</p>
+        <p><strong>Next step:</strong> connect Stripe and deployment from GitHub.</p>
+      </div>
+    </div>
+
+    <div class="footer">MoneyBloom · BloomBot · AI-assisted trading systems</div>
   </div>
-  <hr class="mt-16 mb-8 border-gray-200" />
-  <p class="text-sm text-center text-gray-500 px-4">Past performance does not guarantee future results. Trading involves risk.</p>
-</section>
 </body>
 </html>
