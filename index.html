@@ -7,104 +7,47 @@
   <meta name="description" content="MoneyBloom builds AI-powered trading systems for serious operators. BloomBot analyzes, monitors, and executes within strict rules." />
   <style>
     :root {
-      --bg: #07111f;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.09);
-      --text: #e8eefc;
-      --muted: #9fb0d0;
-      --accent: #6ee7ff;
-      --accent2: #8b5cf6;
-      --line: rgba(255,255,255,.12);
-      --good: #4ade80;
+      --bg:#07111f; --panel:rgba(255,255,255,.06); --panel2:rgba(255,255,255,.09);
+      --text:#e8eefc; --muted:#9fb0d0; --accent:#6ee7ff; --accent2:#8b5cf6;
+      --line:rgba(255,255,255,.12); --good:#4ade80;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(110,231,255,.18), transparent 30%),
-        radial-gradient(circle at 80% 0%, rgba(139,92,246,.18), transparent 25%),
-        var(--bg);
-      color: var(--text);
-    }
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 80px; }
-    .nav {
-      display:flex; justify-content:space-between; align-items:center; gap:16px;
-      padding: 10px 0 28px;
-    }
-    .brand { font-weight: 800; letter-spacing: .4px; font-size: 20px; }
-    .brand span { color: var(--accent); }
-    .nav a {
-      color: var(--muted); text-decoration:none; margin-left: 18px; font-size: 14px;
-    }
-    .hero {
-      display:grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: stretch;
-      padding: 34px 0 18px;
-    }
-    .card {
-      background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.03));
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: 0 24px 80px rgba(0,0,0,.28);
-      backdrop-filter: blur(12px);
-    }
-    .hero-main { padding: 40px; }
-    .eyebrow {
-      display:inline-flex; align-items:center; gap:8px;
-      color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing:.16em;
-      text-transform: uppercase;
-    }
-    h1 {
-      margin: 16px 0 14px;
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: .96;
-      letter-spacing: -.05em;
-    }
-    .sub {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-      max-width: 62ch;
-    }
-    .actions { display:flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
-    .btn {
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: 14px 20px; border-radius: 999px; text-decoration:none;
-      font-weight: 700; border: 1px solid var(--line);
-    }
-    .btn.primary { background: linear-gradient(90deg, var(--accent2), var(--accent)); color:#06101d; }
-    .btn.secondary { color: var(--text); background: rgba(255,255,255,.04); }
-    .hero-side { padding: 22px; display:flex; flex-direction:column; gap:14px; }
-    .stat {
-      background: var(--panel2); border: 1px solid var(--line); border-radius: 18px; padding: 18px;
-    }
-    .stat .k { font-size: 28px; font-weight: 800; }
-    .stat .l { color: var(--muted); font-size: 13px; margin-top: 6px; }
-    .grid3 {
-      display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px;
-    }
-    .feature { padding: 24px; }
-    .feature h3, .section h2 { margin: 0 0 10px; }
-    .feature p, .section p, li { color: var(--muted); line-height: 1.7; }
-    .section { padding: 34px 0 0; }
-    .section .card { padding: 28px; }
-    ul { padding-left: 18px; margin: 0; }
-    .split {
-      display:grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px;
-    }
-    .pill {
-      display:inline-flex; padding: 8px 12px; border-radius: 999px;
-      background: rgba(74,222,128,.12); color: #bff3cf; border: 1px solid rgba(74,222,128,.22);
-      font-size: 13px; font-weight: 700;
-    }
-    .footer {
-      margin-top: 26px; color: var(--muted); font-size: 13px; text-align:center;
-    }
-    @media (max-width: 920px) {
-      .hero, .grid3, .split { grid-template-columns: 1fr; }
-      .hero-main { padding: 28px; }
-      .nav { flex-direction: column; align-items:flex-start; }
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,rgba(110,231,255,.18),transparent 30%),radial-gradient(circle at 80% 0%,rgba(139,92,246,.18),transparent 25%),var(--bg);color:var(--text)}
+    .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0 28px}
+    .brand{font-weight:800;letter-spacing:.4px;font-size:20px}
+    .brand span{color:var(--accent)}
+    .nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch;padding:34px 0 18px}
+    .card{background:linear-gradient(180deg,var(--panel),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:24px;box-shadow:0 24px 80px rgba(0,0,0,.28);backdrop-filter:blur(12px)}
+    .hero-main{padding:40px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    h1{margin:16px 0 14px;font-size:clamp(42px,6vw,76px);line-height:.96;letter-spacing:-.05em}
+    .sub{color:var(--muted);font-size:18px;line-height:1.7;max-width:62ch}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid var(--line)}
+    .btn.primary{background:linear-gradient(90deg,var(--accent2),var(--accent));color:#06101d}
+    .btn.secondary{color:var(--text);background:rgba(255,255,255,.04)}
+    .hero-side{padding:22px;display:flex;flex-direction:column;gap:14px}
+    .stat{background:var(--panel2);border:1px solid var(--line);border-radius:18px;padding:18px}
+    .stat .k{font-size:28px;font-weight:800}
+    .stat .l{color:var(--muted);font-size:13px;margin-top:6px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .feature{padding:24px}
+    .feature h3,.section h2{margin:0 0 10px}
+    .feature p,.section p,li,label,input,textarea{color:var(--muted);line-height:1.7}
+    .section{padding:34px 0 0}
+    .section .card{padding:28px}
+    ul{padding-left:18px;margin:0}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+    .pill{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(74,222,128,.12);color:#bff3cf;border:1px solid rgba(74,222,128,.22);font-size:13px;font-weight:700}
+    .form{display:grid;gap:14px;margin-top:14px;max-width:560px}
+    .field{display:grid;gap:8px}
+    input,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);outline:none}
+    textarea{min-height:120px;resize:vertical}
+    .submit{cursor:pointer;border:0}
+    .footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:920px){.hero,.grid3,.split{grid-template-columns:1fr}.hero-main{padding:28px}.nav{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
 <body>
@@ -122,74 +65,34 @@
       <div class="card hero-main">
         <div class="eyebrow">AI ONE-PERSON COMPANY</div>
         <h1>MoneyBloom builds AI-powered trading systems for serious operators.</h1>
-        <p class="sub">
-          BloomBot is our AI trading operator: it analyzes markets, monitors performance, and executes inside strict rules.
-          Your funds stay in your own exchange account. Freqtrade handles execution. Stripe handles subscriptions.
-        </p>
+        <p class="sub">BloomBot is our AI trading operator: it analyzes markets, monitors performance, and executes inside strict rules. Your funds stay in your own exchange account. Freqtrade handles execution. Stripe handles subscriptions.</p>
         <div class="actions">
           <a class="btn primary" href="#contact">Join the waitlist</a>
           <a class="btn secondary" href="#how">See how it works</a>
         </div>
       </div>
       <div class="card hero-side">
-        <div class="stat">
-          <div class="k">BloomBot</div>
-          <div class="l">The product layer inside MoneyBloom.</div>
-        </div>
-        <div class="stat">
-          <div class="k">1.25%</div>
-          <div class="l">2023 backtest result on BTC/USDT baseline strategy.</div>
-        </div>
-        <div class="stat">
-          <div class="k">2.62%</div>
-          <div class="l">Max drawdown in the same test window.</div>
-        </div>
-        <div class="stat">
-          <div class="k">54.5%</div>
-          <div class="l">Win rate across 11 closed trades.</div>
-        </div>
+        <div class="stat"><div class="k">BloomBot</div><div class="l">The product layer inside MoneyBloom.</div></div>
+        <div class="stat"><div class="k">1.25%</div><div class="l">2023 backtest result on BTC/USDT baseline strategy.</div></div>
+        <div class="stat"><div class="k">2.62%</div><div class="l">Max drawdown in the same test window.</div></div>
+        <div class="stat"><div class="k">54.5%</div><div class="l">Win rate across 11 closed trades.</div></div>
       </div>
     </div>
 
     <div class="grid3">
-      <div class="card feature">
-        <h3>Execution</h3>
-        <p>Freqtrade runs the bot behind the scenes using authenticated exchange access and trade-only permissions.</p>
-      </div>
-      <div class="card feature">
-        <h3>AI Analysis</h3>
-        <p>The AI reads market state, summarizes conditions, and proposes actions before any allowed execution.</p>
-      </div>
-      <div class="card feature">
-        <h3>Billing</h3>
-        <p>Stripe subscriptions keep onboarding and monthly access simple, clean, and professional.</p>
-      </div>
+      <div class="card feature"><h3>Execution</h3><p>Freqtrade runs the bot behind the scenes using authenticated exchange access and trade-only permissions.</p></div>
+      <div class="card feature"><h3>AI Analysis</h3><p>The AI reads market state, summarizes conditions, and proposes actions before any allowed execution.</p></div>
+      <div class="card feature"><h3>Billing</h3><p>Stripe subscriptions keep onboarding and monthly access simple, clean, and professional.</p></div>
     </div>
 
     <div class="section" id="how">
       <div class="card">
         <h2>How it works</h2>
         <div class="split">
-          <div>
-            <span class="pill">Step 1</span>
-            <h3>Connect</h3>
-            <p>Join the waitlist and connect your exchange account with trade-only permissions.</p>
-          </div>
-          <div>
-            <span class="pill">Step 2</span>
-            <h3>Activate</h3>
-            <p>BloomBot starts reading data, tracking signals, and preparing actions within your rules.</p>
-          </div>
-          <div>
-            <span class="pill">Step 3</span>
-            <h3>Monitor</h3>
-            <p>See status, trades, and logs from a polished dashboard built for trust and visibility.</p>
-          </div>
-          <div>
-            <span class="pill">Step 4</span>
-            <h3>Subscribe</h3>
-            <p>Use Stripe for recurring access and customer management without custom billing complexity.</p>
-          </div>
+          <div><span class="pill">Step 1</span><h3>Connect</h3><p>Join the waitlist and connect your exchange account with trade-only permissions.</p></div>
+          <div><span class="pill">Step 2</span><h3>Activate</h3><p>BloomBot starts reading data, tracking signals, and preparing actions within your rules.</p></div>
+          <div><span class="pill">Step 3</span><h3>Monitor</h3><p>See status, trades, and logs from a polished dashboard built for trust and visibility.</p></div>
+          <div><span class="pill">Step 4</span><h3>Subscribe</h3><p>Use Stripe for recurring access and customer management without custom billing complexity.</p></div>
         </div>
       </div>
     </div>
@@ -209,9 +112,23 @@
 
     <div class="section" id="contact">
       <div class="card">
-        <h2>Contact</h2>
-        <p>BloomBot is being built as the AI company layer inside MoneyBloom. Put your email or waitlist form here next.</p>
-        <p><strong>Next step:</strong> connect Stripe and deployment from GitHub.</p>
+        <h2>Join the waitlist</h2>
+        <p>Drop your details here and we’ll use this as the first customer capture form. For now it’s a direct email action so it works on GitHub Pages with no backend.</p>
+        <form class="form" action="mailto:sophallanh@gmail.com" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="message">What are you building?</label>
+            <textarea id="message" name="message" placeholder="Tell us what you want to automate"></textarea>
+          </div>
+          <button class="btn primary submit" type="submit">Send waitlist request</button>
+        </form>
       </div>
     </div>
 
@@ -219,4 +136,3 @@
   </div>
 </body>
 </html>
-<!-- rebuild -->
